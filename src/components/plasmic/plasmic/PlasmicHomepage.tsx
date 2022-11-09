@@ -33,6 +33,8 @@ import {
 } from "@plasmicapp/react-web";
 import TextInput from "../../TextInput"; // plasmic-import: lM7uxk50AAV/component
 import Button2 from "../../Button2"; // plasmic-import: Y2T8I2DKDKS/component
+import Slider from "react-slick"; // plasmic-import: HOQUyOpClJ/codeComponent
+import { DataFetcher } from "@plasmicpkgs/plasmic-query"; // plasmic-import: ae7V86eNoXA/codeComponent
 
 import { useScreenVariants as useScreenVariantsbvi6AlUwBvXDc } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Bvi6alUwBvXDc/globalVariant
 
@@ -57,13 +59,13 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  img?: p.Flex<typeof p.PlasmicImg>;
   textInput?: p.Flex<typeof TextInput>;
   search?: p.Flex<typeof Button2>;
   button?: p.Flex<"button">;
   columns?: p.Flex<"div">;
   ul?: p.Flex<"ul">;
   li?: p.Flex<"li">;
+  slider?: p.Flex<typeof Slider>;
   textbox?: p.Flex<typeof TextInput>;
 };
 
@@ -129,10 +131,8 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.freeBox__dsAdD)}
                 >
                   <p.PlasmicImg
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
                     alt={""}
-                    className={classNames(sty.img)}
+                    className={classNames(sty.img__rpqT)}
                     displayHeight={"40px" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"none" as const}
@@ -329,11 +329,18 @@ function PlasmicHomepage__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.li,
-                          projectcss.__wab_text,
                           sty.li
                         )}
                       >
-                        {"Top Categories\n\n"}
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__pm7Go
+                          )}
+                        >
+                          {"Top Categories\n\n"}
+                        </div>
                       </li>
                     ) : null}
                   </ul>
@@ -349,6 +356,243 @@ function PlasmicHomepage__RenderFunc(props: {
                   >
                     {"name"}
                   </div>
+
+                  <Slider
+                    data-plasmic-name={"slider"}
+                    data-plasmic-override={overrides.slider}
+                    className={classNames("__wab_instance", sty.slider)}
+                  >
+                    <p.PlasmicImg
+                      alt={""}
+                      className={classNames(sty.img__c0XY)}
+                      displayHeight={"auto" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"100%" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"708px" as const}
+                      src={
+                        "https://via.placeholder.com/150x90/FF0000/FFFFFF/?text=Slide_1" as const
+                      }
+                    />
+
+                    <p.PlasmicImg
+                      alt={""}
+                      className={classNames(sty.img__gRpX5)}
+                      displayHeight={"auto" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"100%" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"auto" as const}
+                      src={
+                        "https://via.placeholder.com/150x90/00FF00/FFFFFF/?text=Slide_2" as const
+                      }
+                    />
+
+                    <p.PlasmicImg
+                      alt={""}
+                      className={classNames(sty.img__if0Qw)}
+                      displayHeight={"auto" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"100%" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"auto" as const}
+                      src={
+                        "https://via.placeholder.com/150x90/0000FF/FFFFFF/?text=Slide_3" as const
+                      }
+                    />
+                  </Slider>
+
+                  <DataFetcher
+                    className={classNames(
+                      "__wab_instance",
+                      sty.httpApiFetcher__faBh4
+                    )}
+                    dataName={"fetchedData" as const}
+                    errorDisplay={
+                      <ph.DataCtxReader>
+                        {$ctx => "Error fetching data"}
+                      </ph.DataCtxReader>
+                    }
+                    headers={{
+                      "Content-Type": "application/json",
+                      Accept: "application/json"
+                    }}
+                    loadingDisplay={
+                      <ph.DataCtxReader>
+                        {$ctx => "Loading..."}
+                      </ph.DataCtxReader>
+                    }
+                    method={"GET" as const}
+                    noLayout={false}
+                    url={"https://dummyjson.com/products?limit=5" as const}
+                  >
+                    <ph.DataCtxReader>
+                      {$ctx =>
+                        (() => {
+                          try {
+                            return $ctx.fetchedData.products;
+                          } catch (e) {
+                            if (e instanceof TypeError) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })().map((currentItem, currentIndex) => (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox___9LxkD
+                            )}
+                            key={currentIndex}
+                          >
+                            <p.PlasmicImg
+                              alt={""}
+                              className={classNames(sty.img__aSk7H)}
+                              displayHeight={"auto" as const}
+                              displayMaxHeight={"none" as const}
+                              displayMaxWidth={"100%" as const}
+                              displayMinHeight={"0" as const}
+                              displayMinWidth={"0" as const}
+                              displayWidth={"206px" as const}
+                              loading={"lazy" as const}
+                              src={(() => {
+                                try {
+                                  return currentItem.thumbnail;
+                                } catch (e) {
+                                  if (e instanceof TypeError) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            />
+
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___2005O
+                              )}
+                            >
+                              {(() => {
+                                try {
+                                  return currentItem.title;
+                                } catch (e) {
+                                  if (e instanceof TypeError) {
+                                    return "Enter some text";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </div>
+
+                            <DataFetcher
+                              className={classNames(
+                                "__wab_instance",
+                                sty.httpApiFetcher___1OlBu
+                              )}
+                              dataName={"fetchedData" as const}
+                              errorDisplay={
+                                <ph.DataCtxReader>
+                                  {$ctx => (
+                                    <React.Fragment>
+                                      <div
+                                        className={classNames(
+                                          projectcss.all,
+                                          projectcss.__wab_text,
+                                          sty.text__xWeBm
+                                        )}
+                                      >
+                                        {"Error fetching data"}
+                                      </div>
+
+                                      {true ? (
+                                        <div
+                                          className={classNames(
+                                            projectcss.all,
+                                            sty.freeBox__bcrKd
+                                          )}
+                                        >
+                                          {(() => {
+                                            try {
+                                              return currentItem.images;
+                                            } catch (e) {
+                                              if (e instanceof TypeError) {
+                                                return [];
+                                              }
+                                              throw e;
+                                            }
+                                          })().map(
+                                            (currentItem, currentIndex) => (
+                                              <p.PlasmicImg
+                                                alt={""}
+                                                className={classNames(
+                                                  sty.img__bj6T
+                                                )}
+                                                displayHeight={"auto" as const}
+                                                displayMaxHeight={
+                                                  "none" as const
+                                                }
+                                                displayMaxWidth={"15%" as const}
+                                                displayMinHeight={"0" as const}
+                                                displayMinWidth={"0" as const}
+                                                displayWidth={"auto" as const}
+                                                key={currentIndex}
+                                                loading={"lazy" as const}
+                                                src={(() => {
+                                                  try {
+                                                    return currentItem;
+                                                  } catch (e) {
+                                                    if (
+                                                      e instanceof TypeError
+                                                    ) {
+                                                      return undefined;
+                                                    }
+                                                    throw e;
+                                                  }
+                                                })()}
+                                              />
+                                            )
+                                          )}
+                                        </div>
+                                      ) : null}
+                                    </React.Fragment>
+                                  )}
+                                </ph.DataCtxReader>
+                              }
+                              headers={{
+                                "Content-Type": "application/json",
+                                Accept: "application/json"
+                              }}
+                              loadingDisplay={
+                                <ph.DataCtxReader>
+                                  {$ctx => "Loading..."}
+                                </ph.DataCtxReader>
+                              }
+                              method={"GET" as const}
+                              noLayout={false}
+                              url={(() => {
+                                try {
+                                  return (
+                                    "https://dummyjson.com/products/1/" +
+                                    currentItem.id
+                                  );
+                                } catch (e) {
+                                  if (e instanceof TypeError) {
+                                    return "https://dummyjson.com/products/1";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            />
+                          </div>
+                        ))
+                      }
+                    </ph.DataCtxReader>
+                  </DataFetcher>
                 </div>
               </div>
             </div>
@@ -362,35 +606,35 @@ function PlasmicHomepage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "img",
     "textInput",
     "textbox",
     "search",
     "button",
     "columns",
     "ul",
-    "li"
+    "li",
+    "slider"
   ],
-  img: ["img"],
   textInput: ["textInput", "textbox"],
   search: ["search"],
   button: ["button"],
-  columns: ["columns", "ul", "li"],
+  columns: ["columns", "ul", "li", "slider"],
   ul: ["ul", "li"],
-  li: ["li"]
+  li: ["li"],
+  slider: ["slider"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  img: typeof p.PlasmicImg;
   textInput: typeof TextInput;
   search: typeof Button2;
   button: "button";
   columns: "div";
   ul: "ul";
   li: "li";
+  slider: typeof Slider;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -454,13 +698,13 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    img: makeNodeComponent("img"),
     textInput: makeNodeComponent("textInput"),
     search: makeNodeComponent("search"),
     button: makeNodeComponent("button"),
     columns: makeNodeComponent("columns"),
     ul: makeNodeComponent("ul"),
     li: makeNodeComponent("li"),
+    slider: makeNodeComponent("slider"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

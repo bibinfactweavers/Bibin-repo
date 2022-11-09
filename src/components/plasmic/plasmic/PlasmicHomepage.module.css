@@ -162,7 +162,7 @@
     margin-top: 8px;
   }
 }
-.img {
+.img__rpqT {
   object-fit: cover;
   width: 40px;
   height: 40px;
@@ -172,10 +172,10 @@
   z-index: 1;
   flex-shrink: 0;
 }
-.img > picture > img {
+.img__rpqT > picture > img {
   object-fit: cover;
 }
-.img > :global(.__wab_img-spacer) > img {
+.img__rpqT > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .text___7QqV4 {
@@ -410,7 +410,11 @@
   padding-bottom: 155px;
   margin-bottom: 0px;
   padding-top: 0px;
-  display: list-item;
+  display: flex;
+  flex-direction: row;
+}
+.text__pm7Go {
+  position: relative;
 }
 .column__o9RkO {
   display: flex;
@@ -420,4 +424,103 @@
 }
 .text__egt5I {
   position: relative;
+}
+.slider:global(.__wab_instance) {
+  width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  object-fit: cover;
+  position: relative;
+  min-width: 0;
+}
+.img__c0XY {
+  object-fit: cover;
+  max-width: 100%;
+  width: 708px;
+  margin-left: 0px;
+}
+.img__c0XY > picture > img {
+  object-fit: cover;
+}
+.img__c0XY > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.img__gRpX5 {
+  object-fit: cover;
+  max-width: 100%;
+}
+.img__gRpX5 > picture > img {
+  object-fit: cover;
+}
+.img__gRpX5 > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.img__if0Qw {
+  object-fit: cover;
+  max-width: 100%;
+}
+.img__if0Qw > picture > img {
+  object-fit: cover;
+}
+.img__if0Qw > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.httpApiFetcher__faBh4:global(.__wab_instance) {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  min-width: 0;
+}
+.freeBox___9LxkD {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+}
+.img__aSk7H {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 206px;
+  margin: 10px;
+  border: 1px solid #ff0000;
+}
+.img__aSk7H > picture > img {
+  object-fit: cover;
+}
+.img__aSk7H > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.text___2005O {
+  position: relative;
+  padding-right: 244px;
+}
+.httpApiFetcher___1OlBu:global(.__wab_instance) {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  min-width: 0;
+}
+.freeBox__bcrKd {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  top: auto;
+  left: auto;
+  z-index: 1;
+  border: 1px solid #000000;
+}
+.img__bj6T {
+  object-fit: cover;
+  max-width: 15%;
+}
+.img__bj6T > picture > img {
+  object-fit: cover;
+}
+.img__bj6T > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
 }
